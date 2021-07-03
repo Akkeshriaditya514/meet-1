@@ -14,7 +14,7 @@ const audioButt = document.querySelector('.audio');
 const cutCall = document.querySelector('.cutcall');
 const screenShareButt = document.querySelector('.screenshare');
 const whiteboardButt = document.querySelector('.board-icon')
-io.connect('https://meet.adityaprojects.xyz/');
+io.connect('https://meet.adityaprojects.xyz');
 //whiteboard js start
 const whiteboardCont = document.querySelector('.whiteboard-cont');
 const canvas = document.querySelector("#whiteboard");
