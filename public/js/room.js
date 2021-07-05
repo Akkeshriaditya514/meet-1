@@ -305,6 +305,7 @@ function handleVideoOffer(offer, sid, cname, micinf, vidinf) {
             vidCont.classList.add('video-box');
             newvideo.classList.add('video-frame');
             newvideo.autoplay = true;
+            newvideo.controls = true;
             newvideo.playsinline = true;
             newvideo.id = `video${sid}`;
             newvideo.srcObject = event.streams[0];
@@ -454,6 +455,7 @@ socket.on('join room', async (conc, cnames, micinfo, videoinfo) => {
                     vidCont.classList.add('video-box');
                     newvideo.classList.add('video-frame');
                     newvideo.autoplay = true;
+                    newvideo.controls = true;
                     newvideo.playsinline = true;
                     newvideo.id = `video${sid}`;
                     newvideo.srcObject = event.streams[0];
@@ -670,7 +672,6 @@ whiteboardButt.addEventListener('click', () => {
 })
 
 
-
 screenShareButt.addEventListener('click', () => {
     screenShareToggle();
 });
@@ -684,7 +685,7 @@ function screenShareToggle() {
             screenMediaPromise = navigator.mediaDevices.getDisplayMedia({ video: true });
         } else {
             screenMediaPromise = navigator.mediaDevices.getUserMedia({
-                video: { mediaSource: "screen" },
+                video: { mediaSource: "screen"  },
             });
         }
     } else {
@@ -719,6 +720,13 @@ function screenShareToggle() {
             console.error(e);
         });
 }
+
+
+
+
+
+
+
 
 cutCall.addEventListener('click', () => {
     location.href = '/';
